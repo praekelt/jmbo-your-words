@@ -18,8 +18,6 @@ class YourStoryCompetition(models.Model):
     description = models.CharField(max_length=255, blank=True)
     image = models.ImageField(upload_to='your_words/', blank=True)
     content = models.TextField()
-    source_name = models.CharField(max_length=255, blank=True, null=True)
-    source_link = models.URLField(verify_exists=False, blank=True, null=True)
 
     # Organisation
     categories = models.ManyToManyField('category.Category',\

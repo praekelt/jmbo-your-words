@@ -8,8 +8,7 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
     list_filter = ('created', 'publish_on', 'retract_on')
     list_display = ('title', 'published', 'created', 'publish_on', 'retract_on')
     exclude = [
-        'sites',
-        'publishers',
+        'published',
     ]
     ordering = ('-published', '-publish_on', '-updated', 'created',)
     save_on_top = True
@@ -17,6 +16,26 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': AdminCKEditor},
     }
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description', 'publish_on', 'retract_on'),
+        }),
+        ('Advanced', {
+            'fields': ('slug',),
+            'classes': ('collapse',)
+        }),
+        (None, {
+            'fields': ('image', 'content'),
+        }),
+        (None, {
+            'fields': ('categories', 'tags', 'sites'),
+        })
+    )
+
+    def save_model(self, request, obj, form, change):
+        if not obj.author:
+            obj.author = request.user
+        obj.save()
 
 
 class YourStoryEntryAdmin(admin.ModelAdmin):
