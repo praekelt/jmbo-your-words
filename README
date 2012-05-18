@@ -1,0 +1,13 @@
+Usage
+===
+
+Populate the AcceptedWords and AcceptedWordsCategories in the database with words to use for suggestion.
+
+
+from jmbowordsuggest.utils import suggest_word
+
+...
+# suggest_word(category, query) returns the suggest word corrections
+# It returns a list of 0 or more words that match the query
+words = suggest_word('category', 'query')
+
