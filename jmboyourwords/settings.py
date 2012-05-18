@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'south',
     'ckeditor',
     'django_nose',
+    'category',
 )
 
 # CKEDITOR
