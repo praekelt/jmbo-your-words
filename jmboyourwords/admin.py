@@ -7,6 +7,7 @@ from django.db import models
 class YourStoryCompetitionAdmin(admin.ModelAdmin):
     list_filter = ('created', 'publish_on', 'retract_on')
     list_display = ('title', 'published', 'created', 'publish_on', 'retract_on')
+    prepopulated_fields = {'slug': ('title',)}
     exclude = [
         'published',
     ]
