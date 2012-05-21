@@ -53,3 +53,13 @@ class YourStoryCompetitionTestCase(TestCase):
         self.assertEquals(latest_entry.name, 'Test User')
         self.assertEquals(latest_entry.text, 'This is a sample entry story')
 
+        post_data = {
+            'name': 'Test User',
+            'email': 'testuser@email.com',
+            'text': 'This is another sample entry story',
+            'terms': 'False',
+        }
+
+        resp = self.client.post(reverse('your_story', args=[competition.pk]),\
+                                post_data)
+        self.assertContains(resp, 'You must agree to the terms and conditions')
