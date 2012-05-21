@@ -1,0 +1,8 @@
+<h2>{{competition.title}}</h2>
+<b>{{competition.desctiption}}</b>
+<p>{{competition.content|safe}}</p>
+
+<form action="{% url your_story competition.pk %}" method="post">
+    {% csrf_token %}
+    {{form}}
+</form>

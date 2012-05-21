@@ -65,6 +65,8 @@ class YourStoryEntry(models.Model):
     class Meta:
         verbose_name = 'Your story entry'
         verbose_name_plural = 'Your story entries'
+        ordering = ('-created',)
+        get_latest_by = ('created',)
 
     def __unicode__(self):
         return u"Story by %s" % self.name
