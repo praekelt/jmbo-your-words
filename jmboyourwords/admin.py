@@ -6,7 +6,7 @@ from django.db import models
 
 class YourStoryCompetitionAdmin(admin.ModelAdmin):
     list_filter = ('created', 'publish_on', 'retract_on')
-    list_display = ('title', 'published', 'created', 'publish_on', 'retract_on')
+    list_display = ('title', 'published', 'publish_on', 'retract_on', 'created')
     prepopulated_fields = {'slug': ('title',)}
     exclude = [
         'published',
@@ -28,8 +28,12 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('image', 'content'),
         }),
+        ('Advanced', {
+            'fields': ('categories', 'tags',),
+            'classes': ('collapse',)
+        }),
         (None, {
-            'fields': ('categories', 'tags', 'sites'),
+            'fields': ('sites',),
         })
     )
 
@@ -40,10 +44,8 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
 
 
 class YourStoryEntryAdmin(admin.ModelAdmin):
-    readonly_fields = ['user']
     list_filter = ('created', 'your_story_competition')
-    list_display = ('name', 'email', 'user', 'created', 'text',)
-    readonly_fields = ('created', 'user')
+    list_display = ('name', 'text', 'created',)
 
 admin.site.register(YourStoryEntry, YourStoryEntryAdmin)
 admin.site.register(YourStoryCompetition, YourStoryCompetitionAdmin)
