@@ -23,7 +23,7 @@ def your_story(request, competition_id):
     else:
         form = YourStoryEntryForm()
 
-    return direct_to_template(request, 'your_story/your_story.html', {
+    return direct_to_template(request, 'yourwords/your_story.html', {
         'competition': competition,
         'form': form
         })
