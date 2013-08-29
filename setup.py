@@ -5,14 +5,14 @@ def listify(filename):
 
 setup(
     name = "jmbo-your-words",
-    version = "0.0.1",
+    version = "0.0.2",
     url = 'http://github.com/praekelt/jmbo-word-suggest',
     license = 'BSD',
     description = 'Provides users to submit their own stories',
     author = 'Praekelt Foundation',
     author_email = 'dev@praekeltfoundation.org',
     packages = find_packages(),
-    install_requires = ['setuptools'],
+    install_requires = listify('requirements.pip'),
     classifiers = [
         'Development Status :: 1 - Beta',
         'Intended Audience :: Developers',
