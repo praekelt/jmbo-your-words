@@ -1,6 +1,6 @@
 from django.contrib import admin
 from jmboyourwords.models import YourStoryCompetition, YourStoryEntry
-from ckeditor.widgets import AdminCKEditor
+from ckeditor.widgets import CKEditorWidget
 from django.db import models
 
 
@@ -15,7 +15,7 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
     save_on_top = True
 
     formfield_overrides = {
-        models.TextField: {'widget': AdminCKEditor},
+        models.TextField: {'widget': CKEditorWidget},
     }
     fieldsets = (
         (None, {

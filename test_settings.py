@@ -77,6 +77,7 @@ INSTALLED_APPS = (
 )
 
 # CKEDITOR
+CKEDITOR_UPLOAD_PATH = '.'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [

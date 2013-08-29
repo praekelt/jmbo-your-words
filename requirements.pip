@@ -1,9 +1,10 @@
-Django
+Django<1.5
 nose
 django-nose
 South
--e git+https://github.com/dwaiter/django-ckeditor.git#egg=django_ckeditor-dev
--e git+git://github.com/praekelt/jmbo-vlive.git@develop#egg=jmbo-vlive
 pytidylib
 django-category==0.0.3
 pillow
+django-ckeditor
+django-pummel
+setuptools
