@@ -13,6 +13,10 @@ setup(
     author_email = 'dev@praekeltfoundation.org',
     packages = find_packages(),
     install_requires = listify('requirements.pip'),
+    tests_require=[
+        'django-setuptest',
+    ],
+    test_suite="setuptest.setuptest.SetupTestSuite",
     classifiers = [
         'Development Status :: 1 - Beta',
         'Intended Audience :: Developers',

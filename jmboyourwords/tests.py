@@ -10,8 +10,8 @@ from datetime import date, timedelta, datetime
 
 class YourStoryCompetitionTestCase(TestCase):
     fixtures = [
-        'tests/yourwords/fixtures/sample.json',
-        'tests/auth/fixtures/sample.json',
+        'jmboyourwords/fixtures/test/yourwords/sample.json',
+        'jmboyourwords/fixtures/test/auth/sample.json',
     ]
 
     def setUp(self):
