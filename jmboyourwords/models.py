@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 
 from jmboyourwords.managers import PublishedManager
-from jmbovlive.utils import sanitize_html
+from pml.utils import sanitize_html
 
 
 class YourStoryCompetition(models.Model):
