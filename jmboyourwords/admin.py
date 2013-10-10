@@ -45,7 +45,7 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
 
 class YourStoryEntryAdmin(admin.ModelAdmin):
     list_filter = ('created', 'your_story_competition')
-    list_display = ('name', 'user__username', 'text', 'created',)
+    list_display = ('name', 'user', 'text', 'created',)
     raw_id_fields = ('user', )
 
 admin.site.register(YourStoryEntry, YourStoryEntryAdmin)
