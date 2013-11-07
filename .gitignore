@@ -2,4 +2,7 @@
 *.pyc
 *.py~
 *.db
-
+*.swp
+*.egg-info
+pep8.txt
+coverage.xml
