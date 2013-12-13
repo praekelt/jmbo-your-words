@@ -19,14 +19,14 @@ class YourStoryCompetitionAdmin(admin.ModelAdmin):
     }
     fieldsets = (
         (None, {
-            'fields': ('title', 'description', 'publish_on', 'retract_on'),
+            'fields': ('title', 'description', 'publish_on', 'retract_on',),
         }),
         ('Advanced', {
             'fields': ('slug',),
             'classes': ('collapse',)
         }),
         (None, {
-            'fields': ('image', 'content'),
+            'fields': ('image', 'content', 'terms_and_conditions',),
         }),
         ('Advanced', {
             'fields': ('categories', 'tags',),

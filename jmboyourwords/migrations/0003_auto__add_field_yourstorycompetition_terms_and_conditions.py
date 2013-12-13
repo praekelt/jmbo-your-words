@@ -8,17 +8,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'MomsStoriesCompetition'
-        db.create_table('jmboyourwords_momsstoriescompetition', (
-            ('yourstorycompetition_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['jmboyourwords.YourStoryCompetition'], unique=True, primary_key=True)),
-            ('terms_and_conditions', self.gf('django.db.models.fields.TextField')()),
-        ))
-        db.send_create_signal('jmboyourwords', ['MomsStoriesCompetition'])
+        # Adding field 'YourStoryCompetition.terms_and_conditions'
+        db.add_column('jmboyourwords_yourstorycompetition', 'terms_and_conditions',
+                      self.gf('django.db.models.fields.TextField')(default='If we like your story enough, we reserve the right to publish it on this site. We will reward you with air time if we do that.'),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting model 'MomsStoriesCompetition'
-        db.delete_table('jmboyourwords_momsstoriescompetition')
+        # Deleting field 'YourStoryCompetition.terms_and_conditions'
+        db.delete_column('jmboyourwords_yourstorycompetition', 'terms_and_conditions')
 
 
     models = {
@@ -73,11 +71,6 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'jmboyourwords.momsstoriescompetition': {
-            'Meta': {'ordering': "('-publish_on',)", 'object_name': 'MomsStoriesCompetition', '_ormbases': ['jmboyourwords.YourStoryCompetition']},
-            'terms_and_conditions': ('django.db.models.fields.TextField', [], {}),
-            'yourstorycompetition_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['jmboyourwords.YourStoryCompetition']", 'unique': 'True', 'primary_key': 'True'})
-        },
         'jmboyourwords.yourstorycompetition': {
             'Meta': {'ordering': "('-publish_on',)", 'object_name': 'YourStoryCompetition'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']", 'null': 'True', 'blank': 'True'}),
@@ -93,6 +86,7 @@ class Migration(SchemaMigration):
             'sites': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['sites.Site']", 'symmetrical': 'False'}),
             'slug': ('django.db.models.fields.SlugField', [], {'max_length': '255'}),
             'tags': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': "orm['category.Tag']", 'null': 'True', 'blank': 'True'}),
+            'terms_and_conditions': ('django.db.models.fields.TextField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'updated': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'})
         },
