@@ -18,6 +18,10 @@ class YourStoryCompetition(models.Model):
     description = models.CharField(max_length=255, blank=True)
     image = models.ImageField(upload_to='your_words/', blank=True)
     content = models.TextField()
+    terms_and_conditions = models.TextField(
+        help_text="Please supply the terms and conditions text for this \
+                   competition."
+    )
 
     # Organisation
     categories = models.ManyToManyField('category.Category',\
