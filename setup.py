@@ -18,7 +18,7 @@ setup(
     ],
     test_suite="setuptest.setuptest.SetupTestSuite",
     classifiers = [
-        'Development Status :: 1 - Beta',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
