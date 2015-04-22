@@ -1,0 +1,9 @@
+include AUTHORS.rst
+include LICENSE
+include README.rst
+include CHANGELOG.rst
+include doc
+include jmboyourwords
+recursive-include jmboyourwords/templates *
+recursive-include jmboyourwords/templatetags *
+global-exclude *~
