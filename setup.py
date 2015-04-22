@@ -5,8 +5,8 @@ def listify(filename):
 
 setup(
     name = "jmbo-your-words",
-    version = "0.0.4",
-    url = 'http://github.com/praekelt/jmbo-word-suggest',
+    version = "0.0.5",
+    url = 'http://github.com/praekelt/jmbo-your-words',
     license = 'BSD',
     description = 'Provides users to submit their own stories',
     author = 'Praekelt Foundation',
